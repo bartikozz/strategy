@@ -20,7 +20,6 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--font);min-hei
 ::-webkit-scrollbar-track{background:var(--bg2);}
 ::-webkit-scrollbar-thumb{background:#1e3a5f;border-radius:2px;}
 
-/* LAYOUT */
 .header{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);border-bottom:1px solid var(--border);padding:28px 24px 20px;}
 .header-inner{max-width:760px;margin:0 auto;}
 .header-tag{font-size:10px;color:var(--blue);letter-spacing:.2em;font-weight:700;margin-bottom:8px;}
@@ -36,7 +35,6 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--font);min-hei
 
 .content{max-width:760px;margin:0 auto;padding:24px;}
 
-/* CARDS */
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;transition:transform .2s;}
 .card:hover{transform:translateY(-2px);}
 .card-l-green{border-left:3px solid var(--green)!important;}
@@ -50,31 +48,28 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--font);min-hei
 @media(max-width:540px){.g2{grid-template-columns:1fr;}}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
 @media(max-width:480px){.g3{grid-template-columns:repeat(2,1fr);}}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+@media(max-width:540px){.g4{grid-template-columns:repeat(2,1fr);}}
 
 .section-label{font-size:11px;color:var(--blue);letter-spacing:.15em;margin-bottom:8px;}
 .section-desc{font-size:13px;color:var(--muted);line-height:1.7;}
-
 .flex-col{display:flex;flex-direction:column;gap:12px;}
 .flex-row{display:flex;align-items:center;gap:12px;}
 .divider{border-bottom:1px solid var(--border2);}
 
-/* STEP CARDS */
 .step-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;transition:all .2s;}
 .step-card:hover{opacity:.9;}
 
-/* INFOBOX */
 .infobox{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:16px;}
 .infobox-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border2);align-items:flex-start;}
 .infobox-row:last-child{border-bottom:none;}
 .infobox-arrow{color:var(--blue);font-size:10px;min-width:16px;margin-top:1px;}
 
-/* JOURNAL */
 .jbtn{cursor:pointer;border:none;font-family:var(--font);transition:opacity .15s;font-size:11px;}
 .jbtn:hover{opacity:.7;}
 .trade-row{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px;transition:background .15s;}
 .trade-row:hover{background:#0f1e35;}
 
-/* FORM */
 .modal-overlay{position:fixed;inset:0;background:#000c;z-index:100;display:flex;align-items:flex-end;justify-content:center;}
 .modal{background:var(--bg2);border:1px solid var(--border);border-radius:16px 16px 0 0;padding:20px;width:100%;max-width:540px;max-height:92vh;overflow-y:auto;}
 .field-label{font-size:10px;color:var(--dim);margin-bottom:4px;letter-spacing:.1em;display:block;}
@@ -83,25 +78,25 @@ html,body{background:var(--bg);color:var(--text);font-family:var(--font);min-hei
 .field-input option{background:var(--bg2);}
 textarea.field-input{resize:vertical;}
 
-/* KPI */
+.section-divider{font-size:10px;color:var(--blue);letter-spacing:.15em;margin:16px 0 10px;padding-top:12px;border-top:1px solid var(--border2);}
+
 .kpi-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 10px;text-align:center;}
 .kpi-label{font-size:10px;color:var(--dim);margin-bottom:4px;}
 .kpi-value{font-size:18px;font-weight:700;font-family:'Syne',sans-serif;}
 
-/* EQUITY */
 svg.eq{width:100%;height:90px;}
 
-/* MISC */
 .empty-state{text-align:center;padding:48px 0;}
 .empty-icon{font-size:40px;margin-bottom:12px;}
 .empty-title{font-size:13px;color:var(--dim);}
-
 .checklist-num{color:var(--blue);font-size:10px;font-weight:700;min-width:20px;}
+
+/* Tag pills for footprint type */
+.fp-type-pill{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;letter-spacing:.06em;margin-right:4px;}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <div class="header-inner">
     <div class="header-tag">ES / NQ FUTURES · MEAN REVERSION STRATEGY</div>
@@ -110,7 +105,6 @@ svg.eq{width:100%;height:90px;}
   </div>
 </div>
 
-<!-- NAV -->
 <div class="nav">
   <div class="nav-inner">
     <button class="nav-btn active" onclick="switchTab('gex',this)">⚡ GEX Levely</button>
@@ -121,10 +115,9 @@ svg.eq{width:100%;height:90px;}
   </div>
 </div>
 
-<!-- CONTENT -->
 <div class="content">
 
-  <!-- ═══ GEX ═══ -->
+  <!-- GEX TAB -->
   <div id="tab-gex">
     <div style="margin-bottom:20px">
       <div class="section-label">PŘEHLED</div>
@@ -140,7 +133,6 @@ svg.eq{width:100%;height:90px;}
         <div style="font-size:11px;color:var(--muted);line-height:1.7">MM zesilují pohyby. Trh trenduje. <strong style="color:var(--text)">PŘEPNI na break-and-retest strategii.</strong></div>
       </div>
     </div>
-
     <div class="flex-col">
       <div class="card card-l-green" style="border-color:#00ff9d33">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
@@ -171,7 +163,6 @@ svg.eq{width:100%;height:90px;}
         <p style="font-size:12px;color:var(--muted);line-height:1.7">Pokud cena prorazí GEX flip zónu, prostředí se mění z mean reversion na trend/breakout. STOP obchodování mean reversion strategií, přepni na break-and-retest.</p>
       </div>
     </div>
-
     <div class="infobox" style="margin-top:20px">
       <div class="section-label">ENTRY MODEL CHECKLIST</div>
       <div class="infobox-row"><span class="checklist-num">01</span><span style="font-size:12px;color:var(--text)">Pozitivní GEX den potvrzeno přes GEX Radar</span></div>
@@ -182,15 +173,13 @@ svg.eq{width:100%;height:90px;}
     </div>
   </div>
 
-  <!-- ═══ FOOTPRINT ═══ -->
+  <!-- FOOTPRINT TAB -->
   <div id="tab-footprint" style="display:none">
     <div style="margin-bottom:20px">
       <div class="section-label">TEORIE</div>
       <p class="section-desc">Uvěznění obchodníci vznikají, když agresivní účastníci vstoupí na špatném místě — na maximech nebo minimech u klíčových GEX levelů. Jejich panická likvidace pohání silné reverze.</p>
     </div>
-    <div class="flex-col" style="margin-bottom:24px" id="fp-steps">
-      <!-- Rendered by JS -->
-    </div>
+    <div class="flex-col" style="margin-bottom:24px" id="fp-steps"></div>
     <div class="section-label">KLÍČOVÉ SIGNÁLY V FOOTPRINTU</div>
     <div class="g2" style="margin-top:12px">
       <div class="card" style="border-color:#ff4d6d33"><div style="color:var(--red);font-weight:700;font-size:12px;margin-bottom:6px">Buyer Exhaustion</div><div style="font-size:11px;color:var(--muted);line-height:1.6">Na maximu: delta silně kladná, ale cena NEKLESÁ výše. Hledej cyan fade — klesající delta při rostoucí ceně.</div></div>
@@ -200,7 +189,7 @@ svg.eq{width:100%;height:90px;}
     </div>
   </div>
 
-  <!-- ═══ IV/RV ═══ -->
+  <!-- IV/RV TAB -->
   <div id="tab-ivrv" style="display:none">
     <div style="margin-bottom:20px">
       <div class="section-label">CO JE IV/RV RATIO</div>
@@ -246,7 +235,7 @@ svg.eq{width:100%;height:90px;}
     </div>
   </div>
 
-  <!-- ═══ MACRO ═══ -->
+  <!-- MACRO TAB -->
   <div id="tab-macro" style="display:none">
     <div style="margin-bottom:20px">
       <div class="section-label">PRAVIDLO #1</div>
@@ -262,7 +251,7 @@ svg.eq{width:100%;height:90px;}
     </div>
   </div>
 
-  <!-- ═══ JOURNAL ═══ -->
+  <!-- JOURNAL TAB -->
   <div id="tab-journal" style="display:none">
     <div style="display:flex;gap:8px;margin-bottom:20px;align-items:center;flex-wrap:wrap">
       <button class="jbtn" id="jv-list" onclick="setJournalView('list')" style="padding:8px 14px;border-radius:6px;font-weight:700;background:#4d9fff22;color:var(--blue);border:1px solid #4d9fff55">📋 Obchody</button>
@@ -274,7 +263,7 @@ svg.eq{width:100%;height:90px;}
     <div id="journal-stats-view" style="display:none"></div>
   </div>
 
-</div><!-- /content -->
+</div>
 
 <!-- FORM MODAL -->
 <div class="modal-overlay" id="form-modal" style="display:none" onclick="handleOverlayClick(event)">
@@ -284,51 +273,90 @@ svg.eq{width:100%;height:90px;}
       <button class="jbtn" onclick="closeForm()" style="color:var(--dim);background:transparent;font-size:18px;line-height:1">✕</button>
     </div>
 
-    <div style="font-size:10px;color:var(--blue);letter-spacing:.15em;margin-bottom:10px">ZÁKLADNÍ INFO</div>
-    <div class="g2">
+    <!-- ZÁKLADNÍ INFO -->
+    <div class="section-divider" style="margin-top:0;padding-top:0;border-top:none">ZÁKLADNÍ INFO</div>
+    <div class="g2" style="margin-bottom:10px">
       <div><label class="field-label">DATUM</label><input type="date" id="f-date" class="field-input"/></div>
+      <div><label class="field-label">ČAS VSTUPU (ET)</label><input type="time" id="f-time" class="field-input"/></div>
+    </div>
+    <div class="g2" style="margin-bottom:10px">
       <div><label class="field-label">INSTRUMENT</label><select id="f-instrument" class="field-input"><option>ES</option><option>NQ</option><option>MES</option><option>MNQ</option></select></div>
-    </div>
-    <div class="g2">
       <div><label class="field-label">SMĚR</label><select id="f-direction" class="field-input"><option>LONG</option><option>SHORT</option></select></div>
+    </div>
+    <div class="g2" style="margin-bottom:10px">
       <div><label class="field-label">KONTRAKTY</label><input type="number" id="f-contracts" class="field-input" placeholder="1" min="1"/></div>
+      <div><label class="field-label">SESSION KONTEXT</label><select id="f-session" class="field-input"><option>Early RTH (9:30–11:00)</option><option>Mid RTH (11:00–13:30)</option><option>Late RTH (13:30–16:00)</option></select></div>
     </div>
-    <div class="g2">
-      <div><label class="field-label">GEX LEVEL</label><select id="f-gexLevel" class="field-input"><option>Put Wall</option><option>Call Wall</option><option>Max Pain</option><option>VAL</option><option>VAH</option><option>GEX Flip</option><option>VWAP</option><option>Jiný</option></select></div>
+
+    <!-- GEX KONTEXT -->
+    <div class="section-divider">GEX KONTEXT</div>
+    <div class="g2" style="margin-bottom:10px">
       <div><label class="field-label">GEX PROSTŘEDÍ</label><select id="f-gexEnv" class="field-input"><option>Pozitivní</option><option>Negativní</option><option>Neutrální</option></select></div>
+      <div><label class="field-label">GEX LEVEL (vstup)</label><select id="f-gexLevel" class="field-input"><option>Put Wall</option><option>Call Wall</option><option>Max Pain</option><option>VAL</option><option>VAH</option><option>GEX Flip</option><option>VWAP</option><option>Jiný</option></select></div>
+    </div>
+    <div class="g2" style="margin-bottom:10px">
+      <div><label class="field-label">CALL WALL (cena)</label><input type="number" id="f-callWall" class="field-input" placeholder="5300.00" step="0.25"/></div>
+      <div><label class="field-label">PUT WALL (cena)</label><input type="number" id="f-putWall" class="field-input" placeholder="5200.00" step="0.25"/></div>
+    </div>
+    <div class="g2" style="margin-bottom:10px">
+      <div><label class="field-label">MAX PAIN (cena)</label><input type="number" id="f-maxPain" class="field-input" placeholder="5250.00" step="0.25"/></div>
+      <div><label class="field-label">GEX HODNOTA (z GEX Radar)</label><input type="number" id="f-gexValue" class="field-input" placeholder="+2500000000"/></div>
+    </div>
+    <div style="margin-bottom:10px" id="gex-dist-display" style="display:none"></div>
+
+    <!-- CENY -->
+    <div class="section-divider">CENY (auto-vypočítá R:R)</div>
+    <div class="g2" style="margin-bottom:10px">
+      <div><label class="field-label">ENTRY</label><input type="number" id="f-entry" class="field-input" placeholder="5250.00" step="0.25" oninput="autoCalc()"/></div>
+      <div><label class="field-label">STOP</label><input type="number" id="f-stop" class="field-input" placeholder="5240.00" step="0.25" oninput="autoCalc()"/></div>
+    </div>
+    <div class="g2" style="margin-bottom:10px">
+      <div><label class="field-label">TARGET</label><input type="number" id="f-target" class="field-input" placeholder="5280.00" step="0.25"/></div>
+      <div><label class="field-label">EXIT (skutečný)</label><input type="number" id="f-exit" class="field-input" placeholder="5270.00" step="0.25" oninput="autoCalc()"/></div>
     </div>
 
-    <div style="font-size:10px;color:var(--blue);letter-spacing:.15em;margin:4px 0 10px">CENY (auto-vypočítá R:R)</div>
-    <div class="g2">
-      <div><label class="field-label">ENTRY</label><input type="number" id="f-entry" class="field-input" placeholder="5250.00" oninput="autoCalc()"/></div>
-      <div><label class="field-label">STOP</label><input type="number" id="f-stop" class="field-input" placeholder="5240.00" oninput="autoCalc()"/></div>
-    </div>
-    <div class="g2">
-      <div><label class="field-label">TARGET</label><input type="number" id="f-target" class="field-input" placeholder="5280.00"/></div>
-      <div><label class="field-label">EXIT (skutečný)</label><input type="number" id="f-exit" class="field-input" placeholder="5270.00" oninput="autoCalc()"/></div>
-    </div>
-
-    <div id="auto-calc-display" style="display:none;margin-bottom:14px;padding:12px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;display:flex;gap:20px">
+    <div id="auto-calc-display" style="display:none;margin-bottom:14px;padding:12px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;gap:20px">
       <div><div style="font-size:9px;color:var(--dim);margin-bottom:2px">R MULTIPLE</div><div id="ac-r" style="font-size:18px;font-weight:700;font-family:'Syne',sans-serif"></div></div>
       <div><div style="font-size:9px;color:var(--dim);margin-bottom:2px">P&L (USD)</div><div id="ac-pnl" style="font-size:18px;font-weight:700;font-family:'Syne',sans-serif"></div></div>
+      <div><div style="font-size:9px;color:var(--dim);margin-bottom:2px">VZDÁLENOST OD GEX</div><div id="ac-gexdist" style="font-size:14px;font-weight:700;font-family:'Syne',sans-serif;color:var(--purple)"></div></div>
       <div><div style="font-size:9px;color:var(--dim);margin-bottom:2px">VÝSLEDEK</div><div id="ac-out" style="font-size:16px;font-weight:700;font-family:'Syne',sans-serif"></div></div>
     </div>
 
-    <div style="font-size:10px;color:var(--blue);letter-spacing:.15em;margin:4px 0 10px">KONTEXT DNE</div>
-    <div class="g2">
-      <div><label class="field-label">VIX</label><input type="number" id="f-vix" class="field-input" placeholder="18.5"/></div>
-      <div><label class="field-label">IV/RV RATIO</label><input type="number" id="f-ivrv" class="field-input" placeholder="1.2"/></div>
+    <!-- FOOTPRINT -->
+    <div class="section-divider">FOOTPRINT POTVRZENÍ</div>
+    <div style="margin-bottom:10px"><label class="field-label">TYP FOOTPRINT SIGNÁLU</label>
+      <select id="f-fpType" class="field-input">
+        <option value="">— Žádný / nesplněno —</option>
+        <option>Buyer Exhaustion</option>
+        <option>Seller Exhaustion</option>
+        <option>Absorption</option>
+        <option>Imbalance 70/30</option>
+        <option>Kombinace</option>
+      </select>
     </div>
-    <div class="g2">
-      <div><label class="field-label">MAKRO EVENT</label><select id="f-macro" class="field-input"><option>Žádný</option><option>FOMC</option><option>CPI</option><option>NFP</option><option>PCE</option><option>GDP</option><option>ISM</option><option>Earnings</option><option>OPEX</option><option>Jiný</option></select></div>
-      <div><label class="field-label">EMOČNÍ STAV</label><select id="f-emotion" class="field-input"><option>Calm</option><option>Confident</option><option>Neutral</option><option>Anxious</option><option>FOMO</option><option>Revenge</option></select></div>
+    <div class="g2" style="margin-bottom:10px">
+      <div><label class="field-label">DELTA NA VSTUPU</label><input type="number" id="f-deltaEntry" class="field-input" placeholder="+1850 nebo -2400"/></div>
+      <div><label class="field-label">OBJEM V ZÓNĚ</label><input type="number" id="f-zoneVolume" class="field-input" placeholder="12500"/></div>
     </div>
-
     <div style="margin-bottom:14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px" onclick="toggleFP()">
       <div id="fp-checkbox" style="width:18px;height:18px;border-radius:4px;border:2px solid var(--border);background:transparent;display:flex;align-items:center;justify-content:center;flex-shrink:0"></div>
       <span id="fp-label" style="font-size:11px;color:var(--muted)">Footprint potvrzení — uvěznění traders potvrzeni</span>
     </div>
 
+    <!-- VOLATILITA -->
+    <div class="section-divider">VOLATILITA & KONTEXT</div>
+    <div class="g2" style="margin-bottom:10px">
+      <div><label class="field-label">VIX</label><input type="number" id="f-vix" class="field-input" placeholder="18.5" step="0.1"/></div>
+      <div><label class="field-label">HV20 (realized vol)</label><input type="number" id="f-hv20" class="field-input" placeholder="14.2" step="0.1" oninput="autoIVRV()"/></div>
+    </div>
+    <div class="g2" style="margin-bottom:10px">
+      <div><label class="field-label">IV/RV RATIO <span id="ivrv-auto" style="color:var(--green);font-size:9px"></span></label><input type="number" id="f-ivrv" class="field-input" placeholder="1.2" step="0.01"/></div>
+      <div><label class="field-label">MAKRO EVENT</label><select id="f-macro" class="field-input"><option>Žádný</option><option>FOMC</option><option>CPI</option><option>NFP</option><option>PCE</option><option>GDP</option><option>ISM</option><option>Earnings</option><option>OPEX</option><option>Jiný</option></select></div>
+    </div>
+    <div style="margin-bottom:10px"><label class="field-label">EMOČNÍ STAV</label><select id="f-emotion" class="field-input"><option>Calm</option><option>Confident</option><option>Neutral</option><option>Anxious</option><option>FOMO</option><option>Revenge</option></select></div>
+
+    <!-- POZNÁMKY -->
+    <div class="section-divider">POZNÁMKY</div>
     <div style="margin-bottom:12px"><label class="field-label">POZNÁMKY K SETUPU</label><textarea id="f-notes" class="field-input" rows="3" placeholder="Co jsem viděl, proč jsem vstoupil, co říkal footprint..."></textarea></div>
     <div style="margin-bottom:20px"><label class="field-label">CHYBY / CO ZLEPŠIT</label><textarea id="f-mistakes" class="field-input" rows="2" placeholder="Vstoupil příliš brzy, ignoroval makro event..."></textarea></div>
 
@@ -337,9 +365,7 @@ svg.eq{width:100%;height:90px;}
 </div>
 
 <script>
-// ─── DATA ───────────────────────────────────────────────────────────────────
-const STORAGE_KEY = 'es_nq_strategy_trades_v1';
-
+const STORAGE_KEY = 'es_nq_strategy_trades_v2';
 let trades = [];
 let editId = null;
 let fpChecked = false;
@@ -350,7 +376,6 @@ function loadTrades(){
 }
 function saveTrades(){ localStorage.setItem(STORAGE_KEY,JSON.stringify(trades)); }
 
-// ─── NAV ────────────────────────────────────────────────────────────────────
 function switchTab(id, btn){
   document.querySelectorAll('[id^="tab-"]').forEach(t=>t.style.display='none');
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
@@ -359,7 +384,7 @@ function switchTab(id, btn){
   if(id==='journal') renderJournal();
 }
 
-// ─── FOOTPRINT STEPS ─────────────────────────────────────────────────────────
+// FOOTPRINT STEPS
 const fpSteps=[
   {step:'1',title:'Lokalizuj extrémní deltu',desc:'Na maximu dne / na Call Wall / na VAH hledej svíčku s masivní kladnou deltou (+2000 a více na ES). To znamená, že agresivní buyers vstoupili nahoře.',icon:'🎯',color:'#ff4d6d'},
   {step:'2',title:'Zkontroluj absenci pohybu',desc:'Cena navzdory vysokému nákupnímu tlaku NESTOUPÁ výše. Každý nový pokus o rally selže. Prodejci absorbují veškerou poptávku — to je past.',icon:'🚫',color:'#ffb347'},
@@ -387,7 +412,7 @@ function renderFPSteps(){
 function toggleFPStep(i){ fpOpen=fpOpen===i?-1:i; renderFPSteps(); }
 renderFPSteps();
 
-// ─── MACRO EVENTS ────────────────────────────────────────────────────────────
+// MACRO
 const macroEvents=[
   {event:'FOMC Meeting',freq:'8× ročně (středa)',impact:'EXTRÉMNÍ',ic:'#ff4d6d',rule:'Nevstupuj 2 hodiny před. Po oznámení čekej 15–30 min na usazení. Pak sleduj footprint — první pohyb bývá falešný.',icon:'🏦'},
   {event:'CPI (Inflation Data)',freq:'Měsíčně (středa/čtvrtek)',impact:'VELMI VYSOKÝ',ic:'#ff4d6d',rule:'Číslo nad/pod očekáváním = gap nebo spike. Obchoduj pouze po usazení (min. 5 minut po vydání). IV crush po CPI = menší rozsahy zbytek dne.',icon:'📈'},
@@ -415,7 +440,7 @@ document.getElementById('macro-list').innerHTML=macroEvents.map(e=>`
     </div>
   </div>`).join('');
 
-// ─── JOURNAL ─────────────────────────────────────────────────────────────────
+// JOURNAL
 function setJournalView(v){
   journalView=v;
   document.getElementById('jv-list').style.cssText=v==='list'?'padding:8px 14px;border-radius:6px;font-weight:700;background:#4d9fff22;color:#4d9fff;border:1px solid #4d9fff55':'padding:8px 14px;border-radius:6px;font-weight:400;background:#0d1421;color:#4a6080;border:1px solid #1a2840';
@@ -423,6 +448,15 @@ function setJournalView(v){
   document.getElementById('journal-list-view').style.display=v==='list'?'':'none';
   document.getElementById('journal-stats-view').style.display=v==='stats'?'':'none';
   renderJournal();
+}
+
+function fpTypeColor(t){
+  if(!t||t==='') return null;
+  if(t==='Buyer Exhaustion') return '#ff4d6d';
+  if(t==='Seller Exhaustion') return '#00ff9d';
+  if(t==='Absorption') return '#ffb347';
+  if(t==='Imbalance 70/30') return '#4d9fff';
+  return '#c77dff';
 }
 
 function winColor(o){ return o==='WIN'?'#00ff9d':o==='LOSS'?'#ff4d6d':'#4d9fff'; }
@@ -442,16 +476,19 @@ function renderTradeList(){
   el.innerHTML=trades.map(t=>{
     const wc=winColor(t.outcome);
     const dir=t.direction==='LONG'?'#00ff9d':'#ff4d6d';
+    const fptColor=fpTypeColor(t.fpType);
     return `<div class="trade-row" style="border-left:3px solid ${wc}">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
         <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-          <span style="font-size:11px;font-weight:700;color:#c8d6e8">${t.date}</span>
+          <span style="font-size:11px;font-weight:700;color:#c8d6e8">${t.date}${t.time?' '+t.time:''}</span>
           <span class="badge" style="background:#4d9fff22;color:#4d9fff">${t.instrument}</span>
           <span class="badge" style="background:${dir}22;color:${dir}">${t.direction}</span>
           <span style="font-size:10px;color:#4a6080">${t.gexLevel}</span>
           <span class="badge" style="background:${wc}22;color:${wc}">${t.outcome}</span>
-          ${t.footprintConfirm?'<span style="font-size:10px;color:#c77dff">🔥 FP ✓</span>':''}
+          ${t.fpType?`<span class="fp-type-pill" style="background:${fptColor}22;color:${fptColor}">🔥 ${t.fpType}</span>`:''}
+          ${t.footprintConfirm&&!t.fpType?'<span style="font-size:10px;color:#c77dff">🔥 FP ✓</span>':''}
           ${t.macroEvent&&t.macroEvent!=='Žádný'?`<span style="font-size:10px;color:#ffb347">⚡ ${t.macroEvent}</span>`:''}
+          ${t.session?`<span style="font-size:9px;color:#4a6080">${t.session.split(' ')[0]}</span>`:''}
         </div>
         <div style="display:flex;gap:10px;align-items:center">
           ${t.pnl?`<span style="font-size:14px;font-weight:700;color:${parseFloat(t.pnl)>=0?'#00ff9d':'#ff4d6d'}">${parseFloat(t.pnl)>=0?'+':''}$${t.pnl}</span>`:''}
@@ -465,13 +502,19 @@ function renderTradeList(){
         <span>Stop: <span style="color:#ff4d6d88">${t.stopPrice||'—'}</span></span>
         <span>Exit: <span style="color:#c8d6e8">${t.exitPrice||'—'}</span></span>
         ${t.vix?`<span>VIX: <span style="color:#c8d6e8">${t.vix}</span></span>`:''}
+        ${t.hv20?`<span>HV20: <span style="color:#c8d6e8">${t.hv20}</span></span>`:''}
+        ${t.ivRv?`<span>IV/RV: <span style="color:${parseFloat(t.ivRv)>=1.3?'#00ff9d':parseFloat(t.ivRv)<0.9?'#ff4d6d':'#ffb347'}">${t.ivRv}</span></span>`:''}
+        ${t.callWall?`<span>CW: <span style="color:#ff4d6d88">${t.callWall}</span></span>`:''}
+        ${t.putWall?`<span>PW: <span style="color:#00ff9d88">${t.putWall}</span></span>`:''}
+        ${t.gexDistPts?`<span>Dist GEX: <span style="color:#c77dff">${t.gexDistPts} pts</span></span>`:''}
+        ${t.deltaEntry?`<span>Δ: <span style="color:${parseFloat(t.deltaEntry)>0?'#00ff9d':'#ff4d6d'}">${t.deltaEntry}</span></span>`:''}
         ${t.emotion&&t.emotion!=='Neutral'?`<span>😶 <span style="color:#ffb347">${t.emotion}</span></span>`:''}
       </div>`:''}
       ${t.notes||t.mistakes?`<div style="margin-top:8px;display:flex;flex-direction:column;gap:4px">
         ${t.notes?`<div style="font-size:10px;color:#7a99bb">💬 ${t.notes}</div>`:''}
         ${t.mistakes?`<div style="font-size:10px;color:#ff7c43">⚠️ ${t.mistakes}</div>`:''}
       </div>`:''}
-      <div id="del-confirm-${t.id}" style="display:none;margin-top:10px;padding:8px 10px;background:#1a0d12;border-radius:6px;display:none;gap:10px;align-items:center">
+      <div id="del-confirm-${t.id}" style="display:none;margin-top:10px;padding:8px 10px;background:#1a0d12;border-radius:6px;gap:10px;align-items:center">
         <span style="font-size:11px;color:#ff4d6d">Smazat tento obchod?</span>
         <button class="jbtn" onclick="deleteTrade('${t.id}')" style="font-size:10px;padding:3px 10px;background:#ff4d6d22;color:#ff4d6d;border:1px solid #ff4d6d44;border-radius:4px">Smazat</button>
         <button class="jbtn" onclick="cancelDelete('${t.id}')" style="font-size:10px;padding:3px 10px;background:#0d1421;color:#4a6080;border:1px solid #1a2840;border-radius:4px">Zrušit</button>
@@ -493,7 +536,7 @@ function deleteTrade(id){
   saveTrades(); renderTradeList();
 }
 
-// ─── STATS ────────────────────────────────────────────────────────────────────
+// STATS
 function renderStats(){
   const el=document.getElementById('journal-stats-view');
   const closed=trades.filter(t=>t.exitPrice&&t.pnl!=='');
@@ -512,7 +555,35 @@ function renderStats(){
   const pf=gl===0?'∞':(gw/gl).toFixed(2);
   let maxS=0,cur=0;
   closed.forEach(t=>{ if(t.outcome==='WIN'){cur=cur>0?cur+1:1;if(cur>maxS)maxS=cur;}else cur=0; });
-  const wFP=closed.filter(t=>t.footprintConfirm);
+
+  // FP type breakdown
+  const fpTypes=['Buyer Exhaustion','Seller Exhaustion','Absorption','Imbalance 70/30','Kombinace'];
+  const fpBreakdown=fpTypes.map(fp=>{
+    const sub=closed.filter(t=>t.fpType===fp);
+    if(!sub.length) return null;
+    const wr=((sub.filter(t=>t.outcome==='WIN').length/sub.length)*100).toFixed(0);
+    return {fp,count:sub.length,wr,color:fpTypeColor(fp)};
+  }).filter(Boolean);
+
+  // Session breakdown
+  const sessions=['Early RTH','Mid RTH','Late RTH'];
+  const sessionBreakdown=sessions.map(s=>{
+    const sub=closed.filter(t=>t.session&&t.session.startsWith(s));
+    if(!sub.length) return null;
+    const wr=((sub.filter(t=>t.outcome==='WIN').length/sub.length)*100).toFixed(0);
+    return {s,count:sub.length,wr};
+  }).filter(Boolean);
+
+  // GEX env breakdown
+  const gexEnvs=['Pozitivní','Negativní','Neutrální'];
+  const gexBreakdown=gexEnvs.map(g=>{
+    const sub=closed.filter(t=>t.gexEnv===g);
+    if(!sub.length) return null;
+    const wr=((sub.filter(t=>t.outcome==='WIN').length/sub.length)*100).toFixed(0);
+    return {g,count:sub.length,wr};
+  }).filter(Boolean);
+
+  const wFP=closed.filter(t=>t.footprintConfirm||t.fpType);
   const fpWR=wFP.length?((wFP.filter(t=>t.outcome==='WIN').length/wFP.length)*100).toFixed(1)+'%':'–';
 
   const kpis=[
@@ -524,7 +595,7 @@ function renderStats(){
     {label:'FP Winrate',value:fpWR,color:'#c77dff'},
   ];
 
-  // Equity curve SVG
+  // Equity SVG
   let cum=0;
   const pts=closed.map((t,i)=>{cum+=parseFloat(t.pnl)||0;return{i,v:cum};});
   const maxV=Math.max(...pts.map(p=>p.v)),minV=Math.min(...pts.map(p=>p.v));
@@ -558,33 +629,127 @@ function renderStats(){
         <span style="font-size:11px;color:#ff4d6d">✗ ${losses} ztrát</span>
       </div>
     </div>
+
+    ${fpBreakdown.length?`<div class="card" style="margin-bottom:12px">
+      <div class="section-label">FOOTPRINT TYP — WIN RATE</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">
+        ${fpBreakdown.map(f=>`<div style="display:flex;align-items:center;gap:10px">
+          <span class="fp-type-pill" style="background:${f.color}22;color:${f.color};min-width:130px">${f.fp}</span>
+          <div style="flex:1;background:#0d1421;border-radius:3px;height:6px;overflow:hidden">
+            <div style="width:${f.wr}%;height:100%;background:${f.color};border-radius:3px"></div>
+          </div>
+          <span style="font-size:10px;color:${f.color};min-width:40px;text-align:right">${f.wr}% (${f.count})</span>
+        </div>`).join('')}
+      </div>
+    </div>`:''}
+
+    ${sessionBreakdown.length?`<div class="card" style="margin-bottom:12px">
+      <div class="section-label">SESSION KONTEXT — WIN RATE</div>
+      <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+        ${sessionBreakdown.map(s=>`<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center;flex:1">
+          <div style="font-size:10px;color:var(--dim);margin-bottom:4px">${s.s}</div>
+          <div style="font-size:16px;font-weight:700;color:${parseInt(s.wr)>=50?'#00ff9d':'#ff4d6d'}">${s.wr}%</div>
+          <div style="font-size:9px;color:var(--dim)">${s.count} obchodů</div>
+        </div>`).join('')}
+      </div>
+    </div>`:''}
+
+    ${gexBreakdown.length?`<div class="card" style="margin-bottom:12px">
+      <div class="section-label">GEX PROSTŘEDÍ — WIN RATE</div>
+      <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+        ${gexBreakdown.map(g=>`<div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;text-align:center;flex:1">
+          <div style="font-size:10px;color:var(--dim);margin-bottom:4px">${g.g}</div>
+          <div style="font-size:16px;font-weight:700;color:${parseInt(g.wr)>=50?'#00ff9d':'#ff4d6d'}">${g.wr}%</div>
+          <div style="font-size:9px;color:var(--dim)">${g.count} obchodů</div>
+        </div>`).join('')}
+      </div>
+    </div>`:''}
+
     <div class="card">
       <div class="section-label">EQUITY CURVE (kumulativní P&L · $50/bod · ES)</div>
       <div style="margin-top:10px">${eqSvg}</div>
     </div>`;
 }
 
-// ─── FORM ─────────────────────────────────────────────────────────────────────
+// FORM
+function autoIVRV(){
+  const vix=parseFloat(document.getElementById('f-vix').value);
+  const hv20=parseFloat(document.getElementById('f-hv20').value);
+  if(vix&&hv20){
+    const ratio=(vix/hv20).toFixed(2);
+    document.getElementById('f-ivrv').value=ratio;
+    document.getElementById('ivrv-auto').textContent='(auto)';
+  }
+}
+
+function autoCalc(){
+  const entry=parseFloat(document.getElementById('f-entry').value);
+  const stop=parseFloat(document.getElementById('f-stop').value);
+  const exit=parseFloat(document.getElementById('f-exit').value);
+  const contracts=parseFloat(document.getElementById('f-contracts').value)||1;
+  const dir=document.getElementById('f-direction').value;
+  const callWall=parseFloat(document.getElementById('f-callWall').value);
+  const putWall=parseFloat(document.getElementById('f-putWall').value);
+  const gexLevel=document.getElementById('f-gexLevel').value;
+  const disp=document.getElementById('auto-calc-display');
+
+  if(!entry||!stop||!exit){disp.style.display='none';return;}
+  const risk=Math.abs(entry-stop);
+  if(risk===0){disp.style.display='none';return;}
+  const pnlPts=dir==='LONG'?exit-entry:entry-exit;
+  const R=(pnlPts/risk).toFixed(2);
+  const pnl=(pnlPts*contracts*50).toFixed(0);
+  const out=pnlPts>0.01?'WIN':pnlPts<-0.01?'LOSS':'BE';
+  const col=parseFloat(pnl)>=0?'#00ff9d':'#ff4d6d';
+  const outCol=out==='WIN'?'#00ff9d':out==='LOSS'?'#ff4d6d':'#4d9fff';
+
+  // GEX distance
+  let gexDist='—';
+  if(gexLevel==='Call Wall'&&callWall) gexDist=Math.abs(entry-callWall).toFixed(2)+' pts';
+  else if(gexLevel==='Put Wall'&&putWall) gexDist=Math.abs(entry-putWall).toFixed(2)+' pts';
+
+  document.getElementById('ac-r').textContent=R+'R';
+  document.getElementById('ac-r').style.color=col;
+  document.getElementById('ac-pnl').textContent=(parseFloat(pnl)>=0?'+':'')+'$'+pnl;
+  document.getElementById('ac-pnl').style.color=col;
+  document.getElementById('ac-gexdist').textContent=gexDist;
+  document.getElementById('ac-out').textContent=out;
+  document.getElementById('ac-out').style.color=outCol;
+  disp.style.display='flex';
+}
+
 function openForm(){
   editId=null; fpChecked=false;
   const today=new Date().toISOString().slice(0,10);
+  const now=new Date().toTimeString().slice(0,5);
   document.getElementById('f-date').value=today;
+  document.getElementById('f-time').value=now;
   document.getElementById('f-instrument').value='ES';
   document.getElementById('f-direction').value='LONG';
   document.getElementById('f-contracts').value='1';
+  document.getElementById('f-session').value='Early RTH (9:30–11:00)';
   document.getElementById('f-gexLevel').value='Put Wall';
   document.getElementById('f-gexEnv').value='Pozitivní';
+  document.getElementById('f-callWall').value='';
+  document.getElementById('f-putWall').value='';
+  document.getElementById('f-maxPain').value='';
+  document.getElementById('f-gexValue').value='';
   document.getElementById('f-entry').value='';
   document.getElementById('f-stop').value='';
   document.getElementById('f-target').value='';
   document.getElementById('f-exit').value='';
+  document.getElementById('f-fpType').value='';
+  document.getElementById('f-deltaEntry').value='';
+  document.getElementById('f-zoneVolume').value='';
   document.getElementById('f-vix').value='';
+  document.getElementById('f-hv20').value='';
   document.getElementById('f-ivrv').value='';
   document.getElementById('f-macro').value='Žádný';
   document.getElementById('f-emotion').value='Neutral';
   document.getElementById('f-notes').value='';
   document.getElementById('f-mistakes').value='';
   document.getElementById('auto-calc-display').style.display='none';
+  document.getElementById('ivrv-auto').textContent='';
   updateFPCheckbox();
   document.getElementById('form-title').textContent='📓 Nový obchod';
   document.getElementById('form-submit-btn').textContent='Přidat obchod ↵';
@@ -596,16 +761,26 @@ function editTrade(id){
   if(!t)return;
   editId=id; fpChecked=t.footprintConfirm||false;
   document.getElementById('f-date').value=t.date||'';
+  document.getElementById('f-time').value=t.time||'';
   document.getElementById('f-instrument').value=t.instrument||'ES';
   document.getElementById('f-direction').value=t.direction||'LONG';
   document.getElementById('f-contracts').value=t.contracts||'1';
+  document.getElementById('f-session').value=t.session||'Early RTH (9:30–11:00)';
   document.getElementById('f-gexLevel').value=t.gexLevel||'Put Wall';
   document.getElementById('f-gexEnv').value=t.gexEnv||'Pozitivní';
+  document.getElementById('f-callWall').value=t.callWall||'';
+  document.getElementById('f-putWall').value=t.putWall||'';
+  document.getElementById('f-maxPain').value=t.maxPain||'';
+  document.getElementById('f-gexValue').value=t.gexValue||'';
   document.getElementById('f-entry').value=t.entryPrice||'';
   document.getElementById('f-stop').value=t.stopPrice||'';
   document.getElementById('f-target').value=t.targetPrice||'';
   document.getElementById('f-exit').value=t.exitPrice||'';
+  document.getElementById('f-fpType').value=t.fpType||'';
+  document.getElementById('f-deltaEntry').value=t.deltaEntry||'';
+  document.getElementById('f-zoneVolume').value=t.zoneVolume||'';
   document.getElementById('f-vix').value=t.vix||'';
+  document.getElementById('f-hv20').value=t.hv20||'';
   document.getElementById('f-ivrv').value=t.ivRv||'';
   document.getElementById('f-macro').value=t.macroEvent||'Žádný';
   document.getElementById('f-emotion').value=t.emotion||'Neutral';
@@ -641,31 +816,6 @@ function updateFPCheckbox(){
   }
 }
 
-function autoCalc(){
-  const entry=parseFloat(document.getElementById('f-entry').value);
-  const stop=parseFloat(document.getElementById('f-stop').value);
-  const exit=parseFloat(document.getElementById('f-exit').value);
-  const contracts=parseFloat(document.getElementById('f-contracts').value)||1;
-  const dir=document.getElementById('f-direction').value;
-  const disp=document.getElementById('auto-calc-display');
-  if(!entry||!stop||!exit){disp.style.display='none';return;}
-  const risk=Math.abs(entry-stop);
-  if(risk===0){disp.style.display='none';return;}
-  const pnlPts=dir==='LONG'?exit-entry:entry-exit;
-  const R=(pnlPts/risk).toFixed(2);
-  const pnl=(pnlPts*contracts*50).toFixed(0);
-  const out=pnlPts>0.01?'WIN':pnlPts<-0.01?'LOSS':'BE';
-  const col=parseFloat(pnl)>=0?'#00ff9d':'#ff4d6d';
-  const outCol=out==='WIN'?'#00ff9d':out==='LOSS'?'#ff4d6d':'#4d9fff';
-  document.getElementById('ac-r').textContent=R+'R';
-  document.getElementById('ac-r').style.color=col;
-  document.getElementById('ac-pnl').textContent=(parseFloat(pnl)>=0?'+':'')+'$'+pnl;
-  document.getElementById('ac-pnl').style.color=col;
-  document.getElementById('ac-out').textContent=out;
-  document.getElementById('ac-out').style.color=outCol;
-  disp.style.display='flex';
-}
-
 function submitTrade(){
   const entry=document.getElementById('f-entry').value;
   if(!entry){alert('Vyplň alespoň entry cenu.');return;}
@@ -673,7 +823,10 @@ function submitTrade(){
   const exit=document.getElementById('f-exit').value;
   const contracts=parseFloat(document.getElementById('f-contracts').value)||1;
   const dir=document.getElementById('f-direction').value;
-  let r='',pnl='',out='WIN';
+  const callWall=document.getElementById('f-callWall').value;
+  const putWall=document.getElementById('f-putWall').value;
+  const gexLevel=document.getElementById('f-gexLevel').value;
+  let r='',pnl='',out='WIN',gexDistPts='';
   if(entry&&stop&&exit){
     const risk=Math.abs(parseFloat(entry)-parseFloat(stop));
     if(risk>0){
@@ -682,26 +835,39 @@ function submitTrade(){
       pnl=(pts*contracts*50).toFixed(0);
       out=pts>0.01?'WIN':pts<-0.01?'LOSS':'BE';
     }
+    if(gexLevel==='Call Wall'&&callWall) gexDistPts=Math.abs(parseFloat(entry)-parseFloat(callWall)).toFixed(2);
+    else if(gexLevel==='Put Wall'&&putWall) gexDistPts=Math.abs(parseFloat(entry)-parseFloat(putWall)).toFixed(2);
   }
   const trade={
     id:editId||Date.now().toString(),
     date:document.getElementById('f-date').value,
+    time:document.getElementById('f-time').value,
     instrument:document.getElementById('f-instrument').value,
     direction:dir,
     contracts:document.getElementById('f-contracts').value,
-    gexLevel:document.getElementById('f-gexLevel').value,
+    session:document.getElementById('f-session').value,
+    gexLevel,
     gexEnv:document.getElementById('f-gexEnv').value,
+    callWall,
+    putWall,
+    maxPain:document.getElementById('f-maxPain').value,
+    gexValue:document.getElementById('f-gexValue').value,
     entryPrice:entry,
     stopPrice:stop,
     targetPrice:document.getElementById('f-target').value,
     exitPrice:exit,
+    fpType:document.getElementById('f-fpType').value,
+    deltaEntry:document.getElementById('f-deltaEntry').value,
+    zoneVolume:document.getElementById('f-zoneVolume').value,
+    footprintConfirm:fpChecked,
     vix:document.getElementById('f-vix').value,
+    hv20:document.getElementById('f-hv20').value,
     ivRv:document.getElementById('f-ivrv').value,
     macroEvent:document.getElementById('f-macro').value,
     emotion:document.getElementById('f-emotion').value,
-    footprintConfirm:fpChecked,
     outcome:out,
     pnl,rMultiple:r,
+    gexDistPts,
     notes:document.getElementById('f-notes').value,
     mistakes:document.getElementById('f-mistakes').value,
   };
@@ -713,7 +879,6 @@ function submitTrade(){
   renderJournal();
 }
 
-// ─── INIT ────────────────────────────────────────────────────────────────────
 loadTrades();
 </script>
 </body>
